@@ -94,8 +94,7 @@ jobs:
           img=$(cat images-init.yml)
           for i in ${img[@]}
           do
-            #tagName=$(echo $i | awk -F "/" '{print $NF}');
-            tagName=$i;
+            tagName=$(echo $i | awk -F "/" '{print $NF}');
             echo $i: ${TARGET_REGISTRY}/${TARGET_NAMESPACE}/${tagName} >> images.yml;
             echo ${TARGET_REGISTRY}/${TARGET_NAMESPACE}/${tagName} >> dockerhub-image.yml;
           done
